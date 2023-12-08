@@ -1,0 +1,25 @@
+<h2 class="mt-3">User info</h2>
+
+<%= image_tag user.get_profile_image(100,100) %>
+
+<table class="table">
+  <tr>
+    <td><h6>name</h6></td>
+    <td><h6><%= user.name %></h6></td>
+  </tr>
+  
+  <tr>
+    <td><h6>introduction</h6></td>
+    <td><h6><%= user.introduction %></h6></td>
+  </tr>
+</table>
+
+<% if current_user != user %>
+  <%= link_to user_path(current_user.id), class: "btn btn-outline-secondary form-control" do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+<% else %>
+  <%= link_to edit_user_path(user), class: "btn btn-outline-secondary form-control" do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+<% end %>
