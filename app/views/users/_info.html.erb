@@ -14,12 +14,6 @@
   </tr>
 </table>
 
-<% if current_user != user %>
-  <%= link_to user_path(current_user.id), class: "btn btn-outline-secondary form-control" do %>
-    <i class="fas fa-user-cog"></i>
-  <% end %>
-<% else %>
   <%= link_to edit_user_path(user), class: "btn btn-outline-secondary form-control" do %>
     <i class="fas fa-user-cog"></i>
-  <% end %>
 <% end %>
